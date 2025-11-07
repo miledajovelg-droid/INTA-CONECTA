@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca de INTA Conecta</title>
+  <link rel="icon" type="image/png" href="Imagenes/planta.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Encabezado -->
+ </head>
+<body>
+  <header class="header">
+    <h1>INTA Conecta</h1>
+    <div class="menu-btn" id="menuBtn">☰ Menu</div>
+  </header>
+
+  <!-- Menú lateral -->
+  <nav class="menu" id="menu">
+    <button class="close-btn" id="closeBtn">✕</button>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="submenu">
+        <a href="#">Secciones ▾</a>
+        <ul class="submenu-content">
+          <li><a href="Nutricion.html">Nutrición</a></li>
+          <li><a href="index.html#plantas">Plantas</a></li>
+          <li><a href="Plaga.html">Plagas</a></li>
+          <li><a href="semillas.html">Semillas</a></li>
+        </ul>
+      </li>
+      <li><a href="Acerca De.html" class="active">Acerca de nosotros</a></li>
+      <li><a href="#">Formulario de Registro</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="acerca-section">
+    <div class="image-side">
+      <img src="Imagenes/INTA.jpg" alt="INTA Conecta">
+    </div>
+
+    <div class="text-side">
+      <h1>Acerca de INTA Conecta</h1>
+
+      <h3>Nuestra Misión</h3>
+      <p>
+        INTA Conecta es una plataforma digital creada por el Instituto Nicaragüense de Tecnología Agraria (INTA)
+        para ofrecer información agrícola verificada y práctica a los agricultores.
+        Nuestro objetivo es facilitar el acceso a conocimientos esenciales sobre semillas certificadas,
+        control de plagas, nutrición de cultivos y prácticas agroecológicas.
+      </p>
+
+      <h3>Nuestro Compromiso</h3>
+      <p>
+        Validado por expertos del INTA, nuestra plataforma permite a los agricultores acceder a información detallada
+        sin la necesidad de largas capacitaciones. Promovemos la comunicación directa entre INTA y los productores
+        para mejorar la productividad agrícola y cerrar la brecha tecnológica en el sector.
+      </p>
+
+      <button class="btn-volver" onclick="window.location.href='index.html'">Conoce Más</button>
+    </div>
+  </main>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    const closeBtn = document.getElementById('closeBtn');
+    const links = menu.querySelectorAll('a');
+
+    menuBtn.addEventListener('click', () => menu.classList.add('show'));
+    closeBtn.addEventListener('click', () => menu.classList.remove('show'));
+    links.forEach(link => link.addEventListener('click', () => menu.classList.remove('show')));
+  </script>
+</body>
+</html>

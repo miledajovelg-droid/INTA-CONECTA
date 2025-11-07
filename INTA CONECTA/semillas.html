@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semillas - INTA Conecta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>INTA Conecta</h1>
+    <div class="menu-btn" id="menuBtn">☰ Menu</div>
+  </header>
+
+  <!-- Menú lateral -->
+  <nav class="menu" id="menu">
+    <button class="close-btn" id="closeBtn">✕</button>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="submenu">
+        <a href="#">Secciones ▾</a>
+        <ul class="submenu-content">
+          <li><a href="Nutricion.html">Nutricion</a></li>
+          <li><a href="Plantas.html">Plantas</a></li>
+          <li><a href="Plaga.html">Plagas</a></li>
+          <li><a href="semillas.html" class="active">Semillas</a></li>
+        </ul>
+      </li>
+      <li><a href="Acerca De.html">Acerca de nosotros</a></li>
+      <li><a href="Registro.html">Formulario de Registro</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <div class="texto">
+      <h2>Semillas</h2>
+      <p>
+        En esta sección encontrarás información detallada sobre las distintas variedades de semillas utilizadas en la agricultura moderna. Aprende sobre su selección, conservación y técnicas de siembra que ayudan a obtener cultivos más resistentes y productivos.
+      </p>
+      <p>
+        Además, encontrarás recomendaciones sobre el tipo de semilla ideal para cada tipo de suelo, clima y cultivo, junto con estrategias para mejorar la germinación y el manejo postcosecha.
+      </p>
+      <button class="btn-volver" onclick="window.location.href='index.html'">Volver al inicio</button>
+    </div>
+    <div class="imagen">
+      <img src="Imagenes/Semillas.webp" alt="Semillas">
+    </div>
+  </main>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    const closeBtn = document.getElementById('closeBtn');
+
+    menuBtn.addEventListener('click', () => {
+      menu.classList.add('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      menu.classList.remove('show');
+    });
+  </script>
+</body>
+</html>

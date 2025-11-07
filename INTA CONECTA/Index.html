@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTA Conecta</title>
+
+    <!-- Ícono de la pestaña -->
+    <link rel="icon" type="image/png" href="Imagenes/planta.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Barra superior -->
+    <header class="navbar">
+        <h1>INTA Conecta</h1>
+          </div>
+        <button id="menu-btn" class="menu-btn">☰ Menú</button>
+    </header>
+<!-- Menú lateral oculto -->
+    <nav id="side-menu" class="side-menu">
+        <button id="close-btn" class="close-btn">✕</button>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li class="submenu">
+    <a href="#">Secciones ▾</a>
+    <ul class="submenu-content">
+        <li><a href="Nutricion.html">Nutricion</a></li>
+        <li><a href="Plantas.html">Plantas</a></li>
+        <li><a href="Plaga.html">Plagas</a></li>
+        <li><a href="semillas.html">Semillas</a></li>
+    </ul>
+</li>
+            <li><a href="Acerca De.html">Acerca de nosotros</a></li>
+            <li><a href="Registro.html">Formulario de Registro</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <!-- Sección izquierda -->
+        <section class="left">
+            <h2>Descubre INTA Conecta</h2>
+            <p>
+                Bienvenido a INTA Conecta, tu fuente confiable de información agrícola. 
+                Encuentra todo lo que necesitas para mejorar tus prácticas agrícolas 
+                y aumentar tu productividad.
+            </p>
+            <button class="explore-btn" onclick="window.location.href='Acerca De.html'">Explorar</button>
+
+            <!-- Imagen pequeña del agricultor -->
+            <img src="Imagenes/Agricultor.webp" alt="Agricultor" class="small-img">
+        </section>
+
+        <!-- Sección derecha -->
+        <section class="right">
+            <img src="Imagenes/Cultivo-Inicio.jpg" alt="Cultivo principal" class="large-img">
+        </section>
+    </main>
+    <!-- Script del menú -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sideMenu = document.getElementById('side-menu');
+        const closeBtn = document.getElementById('close-btn');
+
+        menuBtn.addEventListener('click', () => {
+            sideMenu.classList.add('open');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            sideMenu.classList.remove('open');
+        });
+    </script>
+</body>
+</html>
+

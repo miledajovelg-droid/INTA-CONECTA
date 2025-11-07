@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTA Conecta - Registro</title>
+   <link rel="icon" type="image/png" href="Imagenes/planta.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo"> INTA Conecta</div>
+    <div class="menu">Menú</div>
+  </header>
+
+  <section class="hero">
+    <img src="Imagenes/fondo.jpg" alt="Registro" class="hero-image">
+  </section>
+
+  <section class="registro">
+    <h1>Registro</h1>
+    <p class="descripcion">“¡Tu conocimiento siembra el futuro! Regístrate y aprende más sobre agricultura sostenible, manejo de cultivos y técnicas agroecológicas.”</p>
+
+    <form id="registroForm">
+      <div class="form-group">
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+        <input type="text" id="departamento" name="departamento" placeholder="Departamento" required>
+        <input type="email" id="email" name="email" placeholder="Email*" required>
+      </div>
+      <button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+  </section>
+
+  <script 
+  console.log("[INTA] script.js cargado");
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('registroForm');
+  console.log("[INTA] form encontrado:", !!form, form);
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    console.log("[INTA] submit disparado");
+
+    const nombre = document.getElementById('nombre')?.value.trim();
+    const departamento = document.getElementById('departamento')?.value.trim();
+    const correo = document.getElementById('email')?.value.trim();
+
+    console.log("[INTA] payload:", { nombre, departamento, correo });
+
+    try {
+      const r = await fetch('http://127.0.0.1:3000/api/registro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, correo, departamento })
+      });
+      console.log("[INTA] status:", r.status);
+      const data = await r.json().catch(()=>({}));
+      console.log("[INTA] respuesta:", data);
+
+      alert(data.msg || (r.ok ? 'Registro enviado correctamente' : 'Error al registrar'));
+      if (r.ok) e.target.reset();
+    } catch (err) {
+      console.error("[INTA] error fetch:", err);
+      alert('No se pudo enviar. Verifica que el servidor Node esté corriendo en el puerto 3000.');
+    }
+  });
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Plaga - INTA Conecta</title>
+  <link rel="icon" type="image/png" href="Imagenes/planta.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>INTA Conecta</h1>
+    <div class="menu-btn" id="menuBtn">☰ Menu</div>
+  </header>
+
+  <!-- Menú lateral -->
+  <nav class="menu" id="menu">
+    <button class="close-btn" id="closeBtn">✕</button>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li class="submenu">
+        <a href="#">Secciones ▾</a>
+        <ul class="submenu-content">
+          <li><a href="Nutricion.html">Nutrición</a></li>
+          <li><a href="Plantas.html">Plantas</a></li>
+          <li><a href="Plaga.html"class="active" >Plagas</a></li>
+          <li><a href="semillas.html">Semillas</a></li>
+        </ul>
+      </li>
+      <li><a href="Acerca De.html">Acerca de nosotros</a></li>
+      <li><a href="Registro.html">Formulario de Registro</a></li>
+    </ul>
+  </nav>
+
+   <!-- Contenido principal -->
+  <main class="contenido">
+    <div class="texto">
+      <h2>Plagas</h2>
+      <p>
+      Ayuda Economica</p>
+      <p>
+       Aqui se abordan los principales tipos de plagas que afectan los cultivos agricolas y los metodos mas eficaces para su control. Encontraras recursossobre manejo integrado de plagas, uso responsable de pesticida, alternativa biologicasy estrategias para prevenir daños en la produccion.
+      </p>
+      <button class="btn-volver" onclick="window.location.href='index.html'">Volver al inicio</button>
+    </div>
+    <div class="imagen">
+      <img src="Imagenes/plaga.jpg" alt="Plaga">
+    </div>
+  </main>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    const closeBtn = document.getElementById('closeBtn');
+
+    menuBtn.addEventListener('click', () => {
+      menu.classList.add('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      menu.classList.remove('show');
+    });
+  </script>
+</body>
+</html>
