@@ -483,6 +483,27 @@ input {
 .btn-enviar:hover {
   background-color: #d4d0a4;
 }
+/* --- Móvil pequeño (≤ 480px) --- */
+@media (max-width: 480px) {
+  .left h2 {
+    font-size: 1.35rem;
+  }
+
+  .navbar {
+    padding: 10px 14px;
+  }
+
+  .explore-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .btn-volver {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 
 
 
