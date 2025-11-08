@@ -1,0 +1,46 @@
+# ───────── Node / Backend ─────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+.pnpm-debug.log
+
+# Compilados / builds
+dist/
+build/
+coverage/
+.tmp/
+temp/
+.cache/
+
+# Archivos de entorno / credenciales
+.env
+.env.*
+*.env
+*.local
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Subidas temporales
+uploads/tmp/
+temp_uploads/
+
+# ───────── VS Code / OS ─────────
+.vscode/
+.history/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ───────── Base de datos ─────────
+/backups/
+/sql_backups/
+
+# ───────── Otros ─────────
+*.bak
+*.swp
